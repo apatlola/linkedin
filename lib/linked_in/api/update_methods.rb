@@ -43,20 +43,20 @@ module LinkedIn
         put(path, 'false', "Content-Type" => "application/json")
       end
 
-      def send_message(subject, body, recipient_paths)
-        path = "/people/~/mailbox"
-      
-        message = {
-            'subject' => subject, 
-            'body' => body,
-            'recipients' => {
-                'values' => recipient_paths.map do |profile_path| 
-                  { 'person' => { '_path' => "/people/#{profile_path}" } } 
-                end
-            }
-        }
-        post(path, message.to_json, "Content-Type" => "application/json")
-      end
+      # def send_message(subject, body, recipient_paths)
+      #         path = "/people/~/mailbox"
+      #       
+      #         message = {
+      #             'subject' => subject, 
+      #             'body' => body,
+      #             'recipients' => {
+      #                 'values' => recipient_paths.map do |profile_path| 
+      #                   { 'person' => { '_path' => "/people/#{profile_path}" } } 
+      #                 end
+      #             }
+      #         }
+      #         post(path, message.to_json, "Content-Type" => "application/json")
+      #       end
       #
       # def clear_status
       #   path = "/people/~/current-status"
